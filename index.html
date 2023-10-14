@@ -1,12 +1,28 @@
 <head>
 <title>2wasted</title>
 <script type="text/javascript">
-  var x = prompt("x = ");
-  console.log(x);
+  // var x = prompt("x = ");
+  // console.log(x);
+  document.addEventListener("readystatechange", e => {
+    if (e.target.readyState === "interactive") {
+      var textInput = document.getElementById("textInput");
+      var textLabel = document.getElementById("textLabel");
+
+      console.log(textInput);
+
+      textInput.addEventListener("input", e => {
+        console.log(e);
+        console.log(e.target.value);
+        textLabel.innerHTML = textInput.value;
+      });
+    }
+  });
 </script>
 </head>
 
 
 <body>
 empty
+<label for="textInput" id="textLabel">text = </label>
+<input type="text" id="textInput">
 </body>
