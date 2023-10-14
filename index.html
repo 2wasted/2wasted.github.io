@@ -1,8 +1,8 @@
 <head>
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>2wasted</title>
+
 <script type="text/javascript">
-  // var x = prompt("x = ");
-  // console.log(x);
   document.addEventListener("readystatechange", e => {
     if (e.target.readyState === "interactive") {
       var textInput = document.getElementById("textInput");
@@ -13,7 +13,7 @@
       textInput.addEventListener("input", e => {
         console.log(e);
         console.log(e.target.value);
-        textLabel.innerHTML = textInput.value;
+        textLabel.innerHTML = textInput.value + Math.random();
       });
     }
   });
@@ -23,6 +23,6 @@
 
 <body>
 empty
-<label for="textInput" id="textLabel">text = </label>
+<label for="textInput" id="textLabel">text = </label><br>
 <input type="text" id="textInput">
 </body>
